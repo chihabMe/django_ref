@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block title %} search  {% endblock title %} 
+{% block body %}
+<div>
+  
+  <ul>
+      {% if articles %}
+    {% for article in articles %}
+    <li><a href="{% url 'articles:article' article.id %}">{{article.title}}</a></li>
+  
+    {% endfor %}
+    {% else %}
+    <h1>there is no results !</h1>
+    {% endif %}
+  </ul>
+
+</div>
+{% endblock body %}
